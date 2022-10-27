@@ -26,7 +26,7 @@ public class OnlinePcGameStoreApplication {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("com.qa.emp.controller"))              
+          .apis(RequestHandlerSelectors.basePackage("com.qa.onlinepcgamestore.controller"))              
           .paths(PathSelectors.any())                          
           .build();                                           
     }
