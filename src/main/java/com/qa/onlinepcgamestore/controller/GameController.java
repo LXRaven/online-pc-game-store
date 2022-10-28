@@ -107,8 +107,8 @@ public class GameController {
 	@GetMapping("/games/name/{name}")
 	public ResponseEntity<?> findByName(@PathVariable("name") String name){
 		try {
-			List<Game> gameListByName = this.gameService.findByName(name);
-			responseEntity = new ResponseEntity<>(gameListByName,HttpStatus.OK);
+			Game gameByName = this.gameService.findByName(name);
+			responseEntity = new ResponseEntity<>(gameByName,HttpStatus.OK);
 		} catch(Exception e) {
 			responseEntity = new ResponseEntity<>("some internal error occured..Please try again",HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -143,7 +143,7 @@ public class GameController {
 	@GetMapping("/games/developer/{developer}")
 	public ResponseEntity<?> findByDeveloper(@PathVariable("developer") String developer){
 		try {
-			List<Game> gameListByDeveloper = this.gameService.findByName(developer);
+			List<Game> gameListByDeveloper = this.gameService.findByDeveloper(developer);
 			responseEntity = new ResponseEntity<>(gameListByDeveloper,HttpStatus.OK);
 		} catch(Exception e) {
 			responseEntity = new ResponseEntity<>("some internal error occured..Please try again",HttpStatus.INTERNAL_SERVER_ERROR);

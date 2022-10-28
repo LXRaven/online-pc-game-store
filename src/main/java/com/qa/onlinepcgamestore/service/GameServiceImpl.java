@@ -40,7 +40,7 @@ public class GameServiceImpl implements GameService{
 	}
 
 	@Override
-	public List<Game> findByName(String name) throws GameNotFoundException {
+	public Game findByName(String name) throws GameNotFoundException {
 		return this.gameRepository.findByName(name);
 	}
 

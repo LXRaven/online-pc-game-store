@@ -11,7 +11,7 @@ public interface GameService {
 
 	public List<Game> getAllGames();
 	public Game getGameById(int id) throws GameNotFoundException;
-	public List<Game> findByName(String name) throws GameNotFoundException;
+	public Game findByName(String name) throws GameNotFoundException;
 	public List<Game> findByReleaseYear(int releaseYear) throws GameNotFoundException;
 	public List<Game> findByGenre(String genre) throws GameNotFoundException;
 	public List<Game> findByDeveloper(String developer) throws GameNotFoundException;
