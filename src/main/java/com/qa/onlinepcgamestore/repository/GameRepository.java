@@ -16,8 +16,8 @@ import com.qa.onlinepcgamestore.entity.Game;
 @Transactional
 public interface  GameRepository extends JpaRepository<Game, Integer>{
 
-	@Query(value = "select * from game_details where game_name like CONCAT('%', :name, '%')", nativeQuery = true)
-	public List<Game> findByName(String name);
+	@Query(value = "select * from game_details where game_name = :name", nativeQuery = true)
+	public Game findByName(String name);
 	
 	@Query(value = "select * from game_details where game_release_year like CONCAT('%', :releaseYear, '%')", nativeQuery = true)
 	public List<Game> findByReleaseYear(int releaseYear);
